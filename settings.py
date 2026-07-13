@@ -1,6 +1,7 @@
 from pathlib import Path
 class Settings:
-
+    """class that contains all changeable settings for the game
+    """
     def __init__(self):
         self.name: str = 'Alien Invasion'
         self.screen_w = 1200

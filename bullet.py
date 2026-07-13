@@ -7,6 +7,11 @@ if TYPE_CHECKING:
     from arsenal import Arsenal
 
 class Bullet(Sprite):
+    """A class that inherites from the sprite class
+
+    Args:
+        Sprite (class): simple base class for visible objects
+    """
     def __init__(self, game:'AlienInvasion'):
         super().__init__()
         self.screen = game.screen
@@ -20,8 +25,12 @@ class Bullet(Sprite):
         self.y = float(self.rect.y)
 
     def update(self):
+        """moves the bullet based off of the speed in settings
+        """
         self.y -=self.setting.bullet_speed
         self.rect.y = self.y
 
     def draw_bullet(self):
+        """draws the bullet on the screen
+        """
         self.screen.blit(self.image, self.rect)
