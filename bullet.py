@@ -7,7 +7,7 @@ if TYPE_CHECKING:
     from arsenal import Arsenal
 
 class Bullet(Sprite):
-    """A class that inherites from the sprite class
+    """A class that represents bullets and inherites from the sprite class
 
     Args:
         Sprite (class): simple base class for visible objects
