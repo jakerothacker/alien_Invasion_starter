@@ -15,7 +15,7 @@ class Bullet(Sprite):
     def __init__(self, game:'AlienInvasion'):
         super().__init__()
         self.screen = game.screen
-        self.setting = game.settings
+        self.settings = game.settings
 
         self.image = pygame.image.load(self.settings.bullet_file)
         self.image = pygame.transform.scale(self.image, (self.settings.bullet_w,self.settings.bullet_h))
@@ -27,7 +27,7 @@ class Bullet(Sprite):
     def update(self):
         """moves the bullet based off of the speed in settings
         """
-        self.y -=self.setting.bullet_speed
+        self.y -= self.settings.bullet_speed
         self.rect.y = self.y
 
     def draw_bullet(self):

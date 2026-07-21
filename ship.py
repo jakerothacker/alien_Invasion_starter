@@ -50,9 +50,9 @@ class Ship:
         self.screen.blit(self.image, self.rect)
 
     def fire(self):
-        """returns True if a bullet can be fired, False if not
+        """Tries to fire a bullet
 
         Returns:
             Bool: True if a bullet can be fired, False if not
         """
-        return self.arsenal.fire_bullet
+        return self.arsenal.fire_bullet()
