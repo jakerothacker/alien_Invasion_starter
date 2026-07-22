@@ -71,7 +71,7 @@ class AlienInvasion:
         """checks if there are any lives left then removes one life and restarts the level if there is a life left otherwise it sets self.game_active to false
         """
         if self.game_stats.ships_left >0:
-            self.gamestats.ships_left -=1
+            self.game_stats.ships_left -=1
             self._reset_level()
             sleep(0.5)
         else:
