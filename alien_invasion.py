@@ -51,23 +51,25 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _check_collisions(self):
+        """A method that checks if the ship and an alien collide, if an alien hits the bottom, an alien is hit by a lazer, or if all aliens are destroyed
+        """
+        if self.ship.check_collisions(self.alien_fleet.fleet):
+                self._check_game_status()
 
-            if self.ship.check_collisions(self.alien_fleet.fleet):
-                self._check_game_status
+        if self.alien_fleet.check_fleet_bottom():
+                self._check_game_status()
 
-            if self.alien_fleet.check_fleet_bottom():
-                self._check_game_status
-
-            collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
-            if collisions:
+        collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
+        if collisions:
                 self.impact_sound.play()
                 self.impact_sound.fadeout(500)
 
-            if self.alien_fleet.check_destroyed_status():
+        if self.alien_fleet.check_destroyed_status():
                 self._reset_level()
 
     def _check_game_status(self):
-
+        """checks if there are any lives left then removes one life and restarts the level if there is a life left otherwise it sets self.game_active to false
+        """
         if self.game_stats.ships_left >0:
             self.gamestats.ships_left -=1
             self._reset_level()
@@ -79,6 +81,8 @@ class AlienInvasion:
 
 
     def _reset_level(self):
+        """removes old bullets and aliens and make a new alien fleet
+        """
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()

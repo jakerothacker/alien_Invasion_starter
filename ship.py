@@ -27,6 +27,8 @@ class Ship:
         self.arsenal = arsenal
 
     def _center_ship(self):
+        """moves the ship to the bottom center of the screen
+        """
         self.rect.midbottom = self.boundaries.midbottom
         self.x = float(self.rect.x)
 
