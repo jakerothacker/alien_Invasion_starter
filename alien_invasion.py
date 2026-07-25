@@ -1,3 +1,10 @@
+"""
+Alien Invasion
+Jake Rothacker
+This file contains the AlienInvasion class which organizes and runs the game. Also if this file is run as __main__ the game will start
+This code is a sample code provided by Professor Gabriel Walters
+7-25-2026
+"""
 import sys
 import pygame
 from settings import Settings
@@ -100,6 +107,8 @@ class AlienInvasion:
         self.alien_fleet.create_fleet()
 
     def restart_game(self):
+        """resets the game stats and gets a new game ready
+        """
         self.settings.initialize_dynamic_settings()
         self.game_stats.reset_stats()
         self.HUD.update_scores()
@@ -139,6 +148,8 @@ class AlienInvasion:
                  self._check_button_clicked()
 
     def _check_button_clicked(self):
+        """checks if the play button gets clicked, if it is clicked then the game restarts
+        """
         mouse_pos = pygame.mouse.get_pos()
         if self.play_button.check_clicked(mouse_pos):
              self.restart_game()

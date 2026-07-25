@@ -1,3 +1,10 @@
+"""
+Ship
+Jake Rothacker
+This file contains the Ship class which organizes the ship and its armaments. 
+This code is a sample code provided by Professor Gabriel Walters
+7-25-2026
+"""
 import pygame
 from typing import TYPE_CHECKING
 
@@ -64,6 +71,14 @@ class Ship:
         return self.arsenal.fire_bullet()
 
     def check_collisions(self, other_group):
+        """checks if the ship colides with any member of a given sprite group. If it does it will center the ship
+
+        Args:
+            other_group (sprite group): A sprite group that might be colliding with the ship
+
+        Returns:
+            Bool: returns true if the ship is colliding with a sprite of said group, false otherwise
+        """
         if pygame.sprite.spritecollideany(self,other_group):
             self._center_ship()
             return True

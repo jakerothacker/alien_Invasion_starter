@@ -1,3 +1,10 @@
+"""
+Bullet
+Jake Rothacker
+This file contains the Bullet class which makes the bullets that are a part of the arsenal
+This code is a sample code provided by Professor Gabriel Walters
+7-25-2026
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING

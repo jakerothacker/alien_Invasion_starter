@@ -1,3 +1,11 @@
+"""
+Alien Fleet
+Jake Rothacker
+This file contains the AlienFleet class which controls the creation and movement of the alien enemies.
+This code is a sample code provided by Professor Gabriel Walters
+7-25-2026
+"""
+
 import pygame
 from typing import TYPE_CHECKING
 from alien import Alien
